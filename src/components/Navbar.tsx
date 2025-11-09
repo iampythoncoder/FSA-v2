@@ -48,13 +48,12 @@ const Navbar = () => {
             className="flex items-center gap-2 group"
           >
             <span className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
-              Future Scholars
-              <span className="ml-1 text-primary/80">Association</span>
+              Future Scholars Association
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}

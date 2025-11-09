@@ -18,10 +18,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Sparkles className="w-8 h-8 text-gold" />
-              <span className="text-xl font-bold">
-                Future Scholars
-                <span className="ml-1 text-primary-foreground/70">Association</span>
-              </span>
+              <span className="text-xl font-bold">Future Scholars Association</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Empowering tomorrow's leaders through education, mentorship, and
