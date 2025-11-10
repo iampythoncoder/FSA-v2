@@ -176,22 +176,26 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-primary/70 text-white">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.28),_transparent_55%)]" />
-        <div className="container relative z-10 mx-auto px-6 py-32">
-          <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)]">
-            <div className="space-y-8">
-              <Badge variant="secondary" className="w-fit border-white/40 bg-white/20 text-white shadow-lg shadow-primary/40">
-                Future Scholars Association
-              </Badge>
+      <section className="relative overflow-hidden bg-gradient-to-r from-primary/95 via-accent to-primary/90 text-white">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.2),_transparent_50%)]" />
+        <div className="pointer-events-none absolute top-0 right-0 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+        <div className="container relative z-10 mx-auto px-6 py-24 md:py-32">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="space-y-6 animate-slide-in-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <Sparkles className="h-4 w-4" />
+                <span className="text-sm font-medium">Our Story</span>
+            </div>
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  Empowering classrooms with community-driven support and opportunity.
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                  Building Brighter
+                  <br />
+                  <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
+                    Futures Together
+              </span>
             </h1>
-                <p className="text-lg md:text-xl text-white/80">
-                  We partner with educators, donors, and volunteers to make sure every student has the tools,
-                  experiences, and encouragement to chase their dreams. Together, we turn small actions into lasting
-                  impact.
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
+                  From a small group of students with a vision to a thriving community making real change—discover how we're breaking down barriers and opening doors for the next generation.
                 </p>
               </div>
 
@@ -216,36 +220,43 @@ const About = () => {
                 ))}
                 </div>
 
-              <div className="flex flex-col items-start gap-4 pt-4 sm:flex-row sm:items-center">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-6 shadow-lg shadow-primary/40">
-                  Explore Our Impact
-                  <ArrowRight className="ml-2 h-5 w-5" />
+              <div className="flex flex-col items-start gap-4 pt-6 sm:flex-row sm:items-center">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 hover:scale-105 px-8 py-6 shadow-2xl transition-all">
+                  <Heart className="mr-2 h-5 w-5" />
+                  Our Mission
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/60 bg-white/10 px-8 py-6 text-white hover:bg-white/20 backdrop-blur"
+                  className="border-2 border-white/70 bg-transparent px-8 py-6 text-white hover:bg-white hover:text-primary transition-all"
                 >
-                  Join the community
+                  Meet the Team
+                  <Users className="ml-2 h-5 w-5" />
                 </Button>
               </div>
                 </div>
 
-            <div className="relative">
-              <div className="pointer-events-none absolute -top-16 -left-10 h-56 w-56 rounded-full bg-white/25 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-16 -right-12 h-72 w-72 rounded-full bg-accent/40 blur-3xl" />
-              <div className="relative mx-auto max-w-2xl overflow-hidden rounded-[3rem] shadow-3xl shadow-primary/40 ring-2 ring-white/40">
+            <div className="relative animate-fade-in">
+              <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-white/30 via-accent/25 to-transparent blur-3xl" />
+              <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-white/30 shadow-2xl backdrop-blur-sm">
                 <img
                   src={heroImageUrl}
-                  alt="Students collaborating with a teacher"
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  alt="Students learning and growing together"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-transparent to-accent/30" />
+                <div className="absolute bottom-6 left-6 right-6 space-y-2">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2.5 backdrop-blur-sm shadow-xl">
+                    <Star className="h-4 w-4 text-primary fill-primary" />
+                    <span className="text-sm font-bold text-primary">Empowering 1,500+ Students</span>
+                  </div>
+                  <p className="text-sm font-medium text-white drop-shadow-2xl">Creating opportunities, one student at a time</p>
+                </div>
               </div>
-              <div className="absolute -bottom-12 left-1/2 flex w-[88%] -translate-x-1/2 flex-col gap-4 rounded-3xl bg-white/90 p-6 text-primary shadow-2xl shadow-primary/30 backdrop-blur">
+              <div className="absolute -bottom-12 left-1/2 flex w-[88%] -translate-x-1/2 flex-col gap-4 rounded-3xl bg-white/95 p-6 text-primary shadow-2xl shadow-primary/30 backdrop-blur-sm border border-white/40">
                 <div className="flex items-center justify-between text-sm font-semibold uppercase tracking-wider text-primary/70">
-                  <span>In the last 12 months</span>
+                  <span>Our Journey So Far</span>
                   <Sparkles className="h-4 w-4" />
                 </div>
                 <div className="flex items-center gap-4">
