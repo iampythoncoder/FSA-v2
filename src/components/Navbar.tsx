@@ -1,21 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, User, LogOut, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/contexts/AuthContext";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { user, isAdmin, signOut } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,46 +64,11 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            {user ? (
-              <>
-                <Link to="/submit-project">
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                    Start a Campaign
-                  </Button>
-                </Link>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" size="icon">
-                      <User className="h-4 w-4" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-48">
-                    {isAdmin && (
-                      <>
-                        <DropdownMenuItem asChild>
-                          <Link to="/admin" className="cursor-pointer">
-                            <Shield className="h-4 w-4 mr-2" />
-                            Admin Dashboard
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                      </>
-                    )}
-                    <DropdownMenuItem onClick={signOut} className="cursor-pointer text-red-600">
-                      <LogOut className="h-4 w-4 mr-2" />
-                      Sign Out
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </>
-            ) : (
-              <Link to="/auth">
-                <Button variant="outline">
-                  <User className="h-4 w-4 mr-2" />
-                  Login / Sign Up
-                </Button>
-              </Link>
-            )}
+            <Link to="/submit-project">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Start a Campaign
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -142,41 +98,11 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            {user ? (
-              <>
-                {isAdmin && (
-                  <Link to="/admin" onClick={() => setIsOpen(false)}>
-                    <Button variant="outline" className="w-full justify-start">
-                      <Shield className="h-4 w-4 mr-2" />
-                      Admin Dashboard
-                    </Button>
-                  </Link>
-                )}
-                <Link to="/submit-project" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full bg-primary text-primary-foreground">
-                    Start a Campaign
-                  </Button>
-                </Link>
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-start text-red-600"
-                  onClick={() => {
-                    signOut();
-                    setIsOpen(false);
-                  }}
-                >
-                  <LogOut className="h-4 w-4 mr-2" />
-                  Sign Out
-                </Button>
-              </>
-            ) : (
-              <Link to="/auth" onClick={() => setIsOpen(false)}>
-                <Button variant="outline" className="w-full justify-start">
-                  <User className="h-4 w-4 mr-2" />
-                  Login / Sign Up
-                </Button>
-              </Link>
-            )}
+            <Link to="/submit-project" onClick={() => setIsOpen(false)}>
+              <Button className="w-full bg-primary text-primary-foreground">
+                Start a Campaign
+              </Button>
+            </Link>
           </div>
         )}
       </div>
